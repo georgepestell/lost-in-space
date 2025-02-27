@@ -23,6 +23,8 @@ final class ScoreBoard {
 
         fill(255);
         // Draw the score in the top left offset by 10 pixels
+        textSize(16);
+        textAlign(LEFT);
         text("Score: " + score, 10, 30);
 
     }
