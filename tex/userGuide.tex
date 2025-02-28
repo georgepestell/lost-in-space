@@ -1,0 +1,71 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage{biblatex}
+\usepackage{titling}
+
+\usepackage{graphicx}
+
+\usepackage{fontspec}
+\setmainfont{Atkinson Hyperlegible}
+\setmonofont{JetBrains Mono}
+
+\title{User Guide: Lost in Space}
+\author{200007413}
+\date{}
+
+\addbibresource{references.bib}
+
+\begin{document}
+
+{\bfseries\huge\thetitle}
+
+{\large\theauthor}
+
+\section{Introduction}
+
+% TODO: Brief overview of the game and its objectives
+
+\subsection{Controls}
+
+Movement is done using the \texttt{WASD} keys, with \texttt{W} to accelerate, \texttt{A} and \texttt{D} to rotate left and right respectively, and \texttt{S} to decelerate. The \texttt{Space} key is used to fire the ship's weapon.
+
+Rotation is applied through the application of a torque force, increasing its angular acceleration in the desired direction.
+
+% TODO: Full controls
+
+\section{Gameplay}
+
+The main gameplay loop consists of the player controlling a triangle spaceship in a 2D space environment, shooting projectiles at asteroids to destroy them. The player's ship has a limited amount of health, and is damaged upon contact with asteroids or the player's own projectiles. The game ends when the player's health reaches zero.
+
+\subsection{Main Menu}
+
+The main menu allows the player to start a new game, view the high scores, or exit the game.
+
+\subsection{Game Mechanics}
+
+\subsubsection{Damage Buffer}
+
+Once the player is damaged, the ship becomes invulnerable for a short period of time, allowing the player to recover their position and avoid further damage. This invulnerability period is indicated by the ship flashing.
+
+\subsection{Objectives}
+
+The player's objective is to score as many points as possible by destroying asteroids. The player's score is increased by an amount based on the size of the asteroid destroyed, with the smallest asteroids giving the most points.
+
+\subsection{Power-ups and Items}
+
+As the player's score increases, power-ups will spawn in the game world. These power-ups can be collected by the player's ship by flying into them. Power-ups include health packs, which restore the player's health by a fixed percentage, and weapon upgrades or new weapons, which can increase the player's damage output, or change the behavior of projectiles.
+
+\subsubsection{Health Packs}
+
+\subsubsection{Weapon Power Overload}
+
+\subsubsection{Shields}
+
+Shields activate the player's invulnerability buffer for a short period of time, allowing the player to take damage without losing health.
+
+\section{Troubleshooting}
+% TODO: Add troubleshooting section
+
+\printbibliography
+
+\end{document}
