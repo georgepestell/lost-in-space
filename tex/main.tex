@@ -26,14 +26,37 @@
 
 {\large\theauthor}
 
-\section{Introduction}
+\section{Overview and Design}
 
 This project implements a simple arcade game inspired by the classic arcade game Asteroids. Through the creation of a simple physics engine tracking position, velocity, acceleration, rotation, and torque, the game simulates the movement of a spaceship in space represented by a simple triangle geometry.
 
-\section{Overview and Design}
-
 \section{Technical Description}
 
+This game is inspired by the classic arcade game Asteroids, integrating some more complex physics mechanics than the original. The aim of the game is to destroy asteroids which appear from the edges of the screen with a constant velocity. As the game progresses, more asteroids spawn at any one time, and their velocity becomes faster.
+
+The player is a triangular space ship which shoots projectiles in the direction faced. The player controls enable shooting, thrusting forwards and backwards, and rotation.
+
+
+when a large asteroid is destroyed, it is split into a certain number of smaller asteorids, as if the projectile has broken the asteroid into pieces. Points are scored for each asteroid destroyed, with increasing points applied when smaller asteroids are destroyed.
+
+Using inspiration from the platformer game HollowKnight, damage to the player is the same regardless of what causes it. The player begins with 3 "engines", allowing damage 3 times to the player before the game ends. when damage is done to the player through collision with a projectile or asteoid, one of the engines is destroyed. After taking damage, a short period of invincibility prevents the player from losing their engines too quickly if trapped between asteroids. This is implemented as a "shield" feature.
+
+\subsection{ForceRegistry}
+
+\subsubsection{Rotation}
+
+In the original Asteroids game, momentum is maintained, and there is no drag on the player's movement, as is the case in space. This means that objects will continue moving forever if no additional forces are applied. However, rotation is done through a direct change in the angle of the player. This game implements angular momentum in rotation, meaning that when the player presses the rotation keys, a rotation force is applied to the current rotation speed.
+
+
+\subsection{Collisions}
+
+Collisions are handled using the
+
+\subsection{High Scores}
+
+A high scores system is implemented through the HighScore class, which reads in, and writes to, a \texttt{highscores.csv} file. Once the player is destroyed, the player can enter 3 alpha numeric initials as an identifier, and their score is added to the 10 high scores if greater than at least one of the existing scores.
+
 \section{Conclusion and Critical Review}
+
 
 \end{document}
