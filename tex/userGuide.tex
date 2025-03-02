@@ -20,15 +20,15 @@
 
 \section{Introduction}
 
-% TODO: Brief overview of the game and its objectives
+This game is a simple arcade game inspired by the classic arcade game Asteroids. The player controls a spaceship in a 2D space environment, shooting projectiles at asteroids, and moving to avoid colliding with them. The game is over when the player runs out of engines (health), which are lost upon collision with asteroids or the player's own projectiles. The game world is a toroidal space, meaning that the player and other objects can wrap around the edges of the screen.
 
 \subsection{Controls}
 
 Movement is done using the \texttt{WASD} keys, with \texttt{W} to accelerate, \texttt{A} and \texttt{D} to rotate left and right respectively, and \texttt{S} to decelerate. The \texttt{Space} key is used to fire the ship's weapon.
 
-Rotation is applied through the application of a torque force, increasing its angular acceleration in the desired direction.
+Rotation is applied through the application of a torque force, increasing its angular acceleration in the desired direction using the \texttt{A} and \texttt{D} keys. The player's ship will continue to rotate after the key is released, and the player must apply a counter-torque to stop spinning.
 
-% TODO: Full controls
+Firing the ship's weapon is done using the \texttt{j} key. The player's ship will fire a projectile in the direction it is facing, which will travel in a straight line until it collides with an asteroid or the player.
 
 \section{Gameplay}
 
@@ -40,27 +40,24 @@ The main menu allows the player to start a new game, view the high scores, or ex
 
 \subsection{Game Mechanics}
 
-\subsubsection{Damage Buffer}
+\subsubsection{Damage Buffer (Shield)}
 
 Once the player is damaged, the ship becomes invulnerable for a short period of time, allowing the player to recover their position and avoid further damage. This invulnerability period is indicated by the ship flashing.
-
-\subsection{Objectives}
-
-The player's objective is to score as many points as possible by destroying asteroids. The player's score is increased by an amount based on the size of the asteroid destroyed, with the smallest asteroids giving the most points.
 
 \subsection{Power-ups and Items}
 
 As the player's score increases, power-ups will spawn in the game world. These power-ups can be collected by the player's ship by flying into them. Power-ups include health packs, which restore the player's health by a fixed percentage, and weapon upgrades or new weapons, which can increase the player's damage output, or change the behavior of projectiles.
 
-\subsubsection{Health Packs}
+\subsubsection{Additional Engines}
 
-\subsubsection{Weapon Power Overload}
+Additional engines can be collected by the player, increasing the player's health by one engine.
 
 \subsubsection{Shields}
 
-Shields activate the player's invulnerability buffer for a short period of time, allowing the player to take damage without losing health.
+Shields activate the player's invulnerability buffer for a short period of time, allowing the player to take damage without losing health. This is the same shield that is activated upon taking damage.
 
-\section{Troubleshooting}
-% TODO: Add troubleshooting section
+\subsection{Objectives}
+
+The player's objective is to score as many points as possible by destroying asteroids. The player's score is increased by an amount based on the size of the asteroid destroyed, with the smallest asteroids giving the most points.
 
 \end{document}

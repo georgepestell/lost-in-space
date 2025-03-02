@@ -13,5 +13,5 @@ cd LostInSpace
 Then run:
 
 ```bash
-processing-java --sketch-name=`pwd` --run
+processing-java --sketch=`pwd` --run
 ```

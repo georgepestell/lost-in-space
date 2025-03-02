@@ -19,7 +19,7 @@ public final class UserInput extends ForceGenerator {
     this.maxThrust = maxThrust;
   }
   
-  public void updateForce(Object object) {
+  public void updateForce(PhysicsObject object) {
     if (this.rotation != 0) {
 
       // Only add rotation if the object is not rotating too fast
@@ -60,6 +60,14 @@ public final class UserInput extends ForceGenerator {
 
   public void updateThrusting(int thrusting) {
     this.thrusting = thrusting;
+  }
+
+  public void recoil(PhysicsObject object, Projectile projectile) {
+    // Add an equal and opposite force to the object based on the mass and velocity of the projectile
+    PVector recoil = new PVector(projectile.velocity.x, projectile.velocity.y);
+    recoil.mult(-1);
+    recoil.mult(object.invMass);
+    object.addForce(recoil);
   }
 
 }

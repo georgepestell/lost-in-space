@@ -2,7 +2,7 @@ public abstract class Weapon {
 
     ForceRegistry fr;
 
-    Object parent;
+    PhysicsObject parent;
     PVector relativePosition;
     PVector relativeAngle;
 
@@ -17,11 +17,11 @@ public abstract class Weapon {
         this.relativeAngle = relativeAngle;
     }
 
-    public void setParent(Object parent) {
+    public void setParent(PhysicsObject parent) {
         this.parent = parent;
     }
 
-    public abstract void fire();
+    public abstract Projectile fire();
 
     public abstract void draw();
 

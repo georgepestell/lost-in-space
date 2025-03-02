@@ -1,6 +1,6 @@
 final float DRAW_SIZE = 5;
 
-final class Particle extends Object{
+final class Particle extends PhysicsObject{
 
   PVector position, velocity;
   PVector forceAccumulator;

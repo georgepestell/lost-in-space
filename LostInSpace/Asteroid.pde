@@ -1,6 +1,5 @@
-public final class Asteroid extends Object {
+public final class Asteroid extends Circle {
 
-    public float size;
     public boolean split = false;
 
     Asteroid(int x, int y, PVector velocity, float size) {
@@ -16,11 +15,11 @@ public final class Asteroid extends Object {
     
     public void draw() {
         // Draw a circle with the size of the asteroid and shade with invMass
-        fill(255 * (1 - this.invMass));
+        fill(255 * 40 * this.invMass);
         ellipse(this.position.x, this.position.y, this.size, this.size);
     }
     
-    public void damage(float damage) {
+    public void damage() {
         this.split = true;
     }
 

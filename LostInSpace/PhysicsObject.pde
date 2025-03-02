@@ -1,4 +1,4 @@
-public abstract class Object {
+public abstract class PhysicsObject {
     PVector position;
     PVector velocity;
     PVector forceAccumulator = new PVector(0, 0);
@@ -26,7 +26,7 @@ public abstract class Object {
 
     void integrate() {
         if (invMass <= 0f) {
-            print("Object has infinite mass, cannot move");
+            print("PhysicsObject has infinite mass, cannot move");
             return;
         }
 
@@ -67,7 +67,7 @@ public abstract class Object {
 
     public abstract void draw();
 
-    public void damage(float damage) {
+    public void damage() {
         // Override this method in subclasses
     }
 

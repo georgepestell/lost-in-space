@@ -12,21 +12,22 @@ public final class Blaster extends Weapon {
         this.damage = damage;
     }
 
-    public void fire() {
+    public Projectile fire() {
 
         // Skip if not owned by a parent
         if (this.parent == null) {
-            return;
+            return null;
         }
 
         // Skip if on cooldown
         if (currentCooldown > 0) {
-            return;
+            return null;
         }
 
         currentCooldown = 1;
 
         PVector position = this.relativePosition.get();
+
         position.rotate(parent.angle);
         position.add(parent.position);
 
@@ -34,7 +35,11 @@ public final class Blaster extends Weapon {
         velocity.rotate(parent.angle);
         velocity.add(parent.velocity);
 
-        projectiles.add(new Projectile(position, velocity));
+        Projectile projectile = new Projectile(position, velocity);
+        projectiles.add(projectile);
+
+        return projectile;
+
     }
 
     public void draw() {

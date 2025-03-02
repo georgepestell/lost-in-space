@@ -1,3 +1,3 @@
 abstract class ForceGenerator {
-  abstract void updateForce(Object p);
+  abstract void updateForce(PhysicsObject p);
 }

@@ -5,7 +5,7 @@ public final class Gravity extends ForceGenerator {
     this.gravity = gravity;
   } 
   
-  void updateForce(Object object) {
+  void updateForce(PhysicsObject object) {
     PVector resultingForce = gravity.get();
     resultingForce.mult(object.getMass());
     object.addForce(resultingForce);
