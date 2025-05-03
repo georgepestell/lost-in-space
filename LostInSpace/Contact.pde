@@ -1,12 +1,12 @@
 public class Contact {
-  Object p1;
-  Object p2;
+  PhysicsObject p1;
+  PhysicsObject p2;
   
   float c;
   
   PVector contactNormal;
   
-  public Contact (Object p1, Object p2, float c, PVector contactNormal) {
+  public Contact (PhysicsObject p1, PhysicsObject p2, float c, PVector contactNormal) {
     this.p1 = p1;
     this.p2 = p2;
     this.c = c;

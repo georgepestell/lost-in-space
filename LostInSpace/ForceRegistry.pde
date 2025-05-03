@@ -3,9 +3,9 @@ import java.util.Iterator;
 class ForceRegistry {
  
   class ForceRegistration {
-    public final Object object;
+    public final PhysicsObject object;
     public final ForceGenerator forceGenerator;
-    ForceRegistration(Object o, ForceGenerator fg) {
+    ForceRegistration(PhysicsObject o, ForceGenerator fg) {
       object = o;
       forceGenerator = fg;
     }
@@ -13,7 +13,7 @@ class ForceRegistry {
  
  ArrayList<ForceRegistration> registrations = new ArrayList();
  
- void register(Object o, ForceGenerator fg) {
+ void register(PhysicsObject o, ForceGenerator fg) {
    registrations.add(new ForceRegistration(o, fg));
  }
  

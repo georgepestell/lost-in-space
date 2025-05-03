@@ -8,7 +8,7 @@ public final class Drag extends ForceGenerator {
     this.k2 = k2;
   }
   
-  public void updateForce(Object object) {
+  public void updateForce(PhysicsObject object) {
     
     PVector force = object.velocity.get();
     
