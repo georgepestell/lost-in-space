@@ -214,10 +214,11 @@ void draw() {
   }
 
   if (showHighScores) {
+    background(0);
     highScores.draw();
     
     textSize(16);
-    text("Press 'r' to restart", MY_WIDTH / 2 - 50, MY_HEIGHT / 2 + 36);
+    text("Press 'r' to restart", MY_WIDTH / 2, MY_HEIGHT - 50);
 
     if (key == 'r') {
       showHighScores = false;
