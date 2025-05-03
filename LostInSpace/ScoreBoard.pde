@@ -26,7 +26,6 @@ final class ScoreBoard {
         textSize(16);
         textAlign(LEFT);
         text("Score: " + score, 10, 30);
-
     }
 
     void score(int points) {
