@@ -10,6 +10,8 @@ int xStart, yStart, xEnd, yEnd;
 ForceRegistry forceRegistry;
 ContactHandler contactHandler;
 
+UserInput userInput;
+
 Player player;
 
 void setup() {
@@ -18,7 +20,7 @@ void setup() {
   forceRegistry = new ForceRegistry();
   contactHandler =  new ContactHandler();
 
-  UserInput userInput = new UserInput(0.1);
+  userInput = new UserInput(0.1);
 
   player = new Player(100, 100, 1);
   forceRegistry.register(player, userInput);
@@ -42,4 +44,16 @@ void mousePressed() {
 void mouseReleased() {
   xEnd = mouseX;
   yEnd = mouseY;
+}
+
+void keyPressed() {
+  if (key == 'h') {
+    userInput.updateIsRotating(true);
+  }
+}
+
+void keyReleased() {
+  if (key == 'h') {
+    userInput.updateIsRotating(false);
+  }
 }
