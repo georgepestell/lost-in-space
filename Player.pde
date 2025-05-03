@@ -26,19 +26,6 @@ public final class Player extends Object {
     triangle(-15, 10, 0, -20, 15, 10);
     popMatrix();
 
-  // Draw health bar with health and maxHealth attributes
-  float barWidth = 200;
-  float barHeight = 5;
-  float healthPercentage = health / maxHealth;
-  
-  // Draw background (red) bar
-  fill(255, 0, 0);
-  rect(10, 10, barWidth, barHeight);
-  
-  // Draw foreground (green) bar based on health
-  fill(0, 255, 0);
-  rect(10, 10, barWidth * healthPercentage, barHeight);
-
   }
 
   public void damage(float damage) {
