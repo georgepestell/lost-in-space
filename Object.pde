@@ -38,24 +38,25 @@ public abstract class Object {
 
         // Angular motion
         angle += angularVelocity;
+        angle %= 2 * PI;
         float angularAcceleration = torqueAccumulator * invInertia;
         angularVelocity += angularAcceleration;
 
         // Boundary checking (unchanged)
         if (position.x < 0) {
-            velocity.x = -velocity.x;
-            position.x = 0;
-        } else if (position.x > width) {
-            velocity.x = -velocity.x;
+            velocity.x = velocity.x;
             position.x = width;
+        } else if (position.x > width) {
+            velocity.x = velocity.x;
+            position.x = 0;
         }
 
         if (position.y < 0) {
-            velocity.y = -velocity.y;
-            position.y = 0;
-        } else if (position.y > height) {
-            velocity.y = -velocity.y;
+            velocity.y = velocity.y;
             position.y = height;
+        } else if (position.y > height) {
+            velocity.y = velocity.y;
+            position.y = 0;
         }
 
         // Reset accumulators
@@ -65,4 +66,9 @@ public abstract class Object {
     }
 
     public abstract void draw();
+
+    public void damage(float damage) {
+        // Override this method in subclasses
+    }
+
 }

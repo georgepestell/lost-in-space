@@ -1,6 +1,6 @@
 import java.util.Iterator;
 
-class ContactHandler {
+class ContactResolver {
 
   void resolveContacts(ArrayList contacts) {
     Iterator itr = contacts.iterator();
